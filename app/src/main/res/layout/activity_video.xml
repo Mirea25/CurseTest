@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DAD0ED"
+    android:visibility="visible"
+    tools:context=".UI.Ui.Video">
+
+    <RelativeLayout
+        android:layout_width="412dp"
+        android:layout_height="62dp"
+        android:background="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/button20"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="290dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/buttonst2r"
+            android:text="Назад"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/button21"
+            android:textAllCaps="false"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="291dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/buttonst2"
+            android:text="Корзина" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button26"
+        android:layout_width="406dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="-1dp"
+        android:background="@drawable/buttonst"
+        android:text="GeForce RTX 3090 TI"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <Button
+        android:id="@+id/button27"
+        android:layout_width="406dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonst"
+        android:scrollbarSize="15dp"
+        android:text="GeForce RTX 2060"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <Button
+        android:id="@+id/button28"
+        android:layout_width="406dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonst"
+        android:text="GeForce 1050 TI"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <Button
+        android:id="@+id/button29"
+        android:layout_width="406dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonst"
+        android:text="AMD Radeon RX 580 "
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.349" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
