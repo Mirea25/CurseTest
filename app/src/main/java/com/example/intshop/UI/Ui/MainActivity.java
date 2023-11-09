@@ -36,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent1 = new Intent(this, Login.class);
         Intent intent2 = new Intent(this, LK.class);
         Db = UserDatabase.getDatabase(getApplicationContext());
-        if (App.getFlag() != null) {
+        if (App.getFlag() != 0) {
             Checker();
         }
-        Log.i("MAIN_INSTANCE", String.valueOf(App.getInstance()));
+
         Button zxc = findViewById(R.id.button10);
         zxc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Objects.equals(Db.permsDao().getPerm(), "unknown")) {
+                if (Objects.equals(App.getPerms(), "unknown")) {
                     startActivity(intent1);
                 }
                 else {
@@ -81,8 +81,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textView2 = findViewById(R.id.textView2);
         TextView textView1 = findViewById(R.id.textView1);
 
-        status = Db.permsDao().getPerm();
-        Log.i("PERM_VAL", status);
+        status = App.getPerms();
             switch (status) {
                 case "adm":
                     textView2.setText("Администратор");

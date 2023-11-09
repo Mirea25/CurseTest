@@ -9,19 +9,18 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.intshop.R;
+import com.example.intshop.UI.Data.App;
 import com.example.intshop.UI.Data.DataStuff;
 import com.example.intshop.UI.DataBase.UserDatabase;
 
 import java.util.Objects;
 
 public class LK extends AppCompatActivity {
-    UserDatabase Db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Db = UserDatabase.getDatabase(getApplicationContext());
-        if (Objects.equals(Db.permsDao().getPerm(), "adm")){
+        if (Objects.equals(App.getPerms(), "adm")){
             setContentView(R.layout.admin_lk);
         }
         else {
@@ -79,6 +78,7 @@ public class LK extends AppCompatActivity {
     }
 
     public void DeleteAll(View view){
+        DataStuff.init(this);
         DataStuff.Delete("Video");
         DataStuff.Delete("Cp");
         DataStuff.Delete("Etc");

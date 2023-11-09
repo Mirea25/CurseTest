@@ -35,9 +35,6 @@ public class Korsina extends AppCompatActivity {
             itemList.add(new Item(DataStuff.getProperty("Korsina", "Korsina" + zxc)));
         }
 
-        Log.i("DATA", itemList.get(0).getText());
-        Log.i("DATA2", itemList.get(1).getText());
-
         RecyclerView recyclerView = findViewById(R.id.korsina_recycler);
         KorsinaRecycleAdapter korsinaRecycleAdapter = new KorsinaRecycleAdapter(this, itemList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

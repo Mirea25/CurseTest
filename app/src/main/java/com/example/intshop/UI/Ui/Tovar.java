@@ -14,8 +14,6 @@ import com.example.intshop.UI.DataBase.UserDatabase;
 import java.util.Objects;
 
 public class Tovar extends AppCompatActivity {
-
-    UserDatabase Db;
     String sample;
 
     @Override
@@ -33,8 +31,6 @@ public class Tovar extends AppCompatActivity {
         else {
             setContentView(R.layout.tovar_err);
         }
-
-        Db = UserDatabase.getDatabase(getApplicationContext());
     }
 
     public void BackStepZxc(View view){
