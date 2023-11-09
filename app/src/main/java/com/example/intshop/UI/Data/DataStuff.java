@@ -9,42 +9,44 @@ public class DataStuff {
     private static SharedPreferences.Editor editor = null;
     private static Context context = null;
 
-    public static void init( Context cntxt ){
+    public static void init(Context cntxt) {
         context = cntxt;
     }
 
-    private static void init(String category){
+    private static void init(String category) {
         settings = context.getSharedPreferences(category, Context.MODE_PRIVATE);
         editor = settings.edit();
     }
 
-    public static void addProperty(String category, String name, String value ){
+    public static void addProperty(String category, String name, String value) {
         init(category);
-        editor.putString( name, value );
+        editor.putString(name, value);
         editor.apply();
 
     }
 
-    public static void addIntProperty(String category, String name, Integer value ){
+    public static void addIntProperty(String category, String name, Integer value) {
         init(category);
         editor.putInt(name, value);
         editor.apply();
 
     }
 
-    public static String getProperty(String category, String name ){
+    public static String getProperty(String category, String name) {
         init(category);
-        return settings.getString( name, null );
+        return settings.getString(name, null);
     }
 
-    public static Integer getIntProperty(String category, String name ){
+    public static Integer getIntProperty(String category, String name) {
         init(category);
         return settings.getInt(name, 0);
     }
 
-    public static void Delete(String category){
+    public static void Delete(String category) {
         init(category);
-        editor.clear();
-        editor.apply();
+        if (!category.isEmpty()) {
+            editor.clear();
+            editor.apply();
+        }
     }
 }

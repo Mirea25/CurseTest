@@ -7,6 +7,22 @@
     android:background="#DAD0ED"
     tools:context=".UI.Ui.Login">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:background="@drawable/buttonst"
+        android:onClick="AddAdm"
+        android:text="abc zxc/Use once"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.757" />
+
     <RelativeLayout
         android:id="@+id/relativeLayout4"
         android:layout_width="412dp"

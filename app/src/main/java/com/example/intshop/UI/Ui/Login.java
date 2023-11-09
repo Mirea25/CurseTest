@@ -29,8 +29,6 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Db = UserDatabase.getDatabase(getApplicationContext());
-        Log.i("LOGIN_INSTANCE", String.valueOf(App.getInstance()));
-
     }
 
     public void PrevButton_Login(View view){
@@ -54,6 +52,10 @@ public class Login extends AppCompatActivity {
         }
     }
 
+    public void AddAdm(View view){
+        Db.userDao().insertData("abc", "zxc", "adm");
+    }
+
     public void LogLogic(){
         FLAG = false;
         TextView text = findViewById(R.id.textView19);
@@ -62,17 +64,13 @@ public class Login extends AppCompatActivity {
         zxc = Db.userDao().findByLogin(LoginText);
         if (Objects.equals(zxc, null)) {
             Db.userDao().insertData(LoginText, PasswdText, "user");
-            Db.permsDao().update("reg");
-            Log.i("NEW", "1");
+            App.setPerms("reg");
         }
         else if (Objects.equals(zxc.status, "adm") && (Objects.equals(zxc.passwd, PasswdText))) {
-            Db.permsDao().update("adm");
-            Log.i("LOGADM", String.valueOf(Db.permsDao().getPerm()));
-            Log.i("ADMIN", "1");
+            App.setPerms("adm");
         }
         else if (Objects.equals(zxc.status, "user") && (Objects.equals(zxc.passwd, PasswdText))){
-            Db.permsDao().update("user");
-            Log.i("USER", "1");
+            App.setPerms("user");
         }
         else {
             text.setText("Неверные данные");

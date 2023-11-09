@@ -12,8 +12,7 @@ import java.util.concurrent.Executors;
 @Database(entities = {User.class, CurPerms.class}, version = 1, exportSchema = false)
 public abstract class UserDatabase extends RoomDatabase {
     private static final int NUMBER_OF_THREADS = 4;
-    static final ExecutorService databaseWriteExecutor =
-            Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+    static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
     private static volatile UserDatabase INSTANCE;
 
     public static UserDatabase getDatabase(final Context context) {
@@ -23,7 +22,6 @@ public abstract class UserDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                                     UserDatabase.class, "users")
                             .allowMainThreadQueries()
-                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

@@ -75,7 +75,6 @@
         android:layout_width="148dp"
         android:layout_height="54dp"
         android:background="@drawable/butt"
-        android:onClick="Authorisation"
         android:text="Личный кабинет"
         android:textAllCaps="false"
         android:textSize="18sp"

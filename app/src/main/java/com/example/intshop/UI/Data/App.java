@@ -8,22 +8,26 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.intshop.UI.DataBase.UserDatabase;
+import com.example.intshop.UI.Ui.Korsina;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class App extends Application {
     public static App instance;
 
-    private static Integer flag;
+    private static Integer flag = 0;
     private static UserDatabase db;
+
+    private static String Perms;
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-        db = UserDatabase.getDatabase(getApplicationContext());
-        db.permsDao().update("unknown");
-        Log.i("START PERMS", db.permsDao().getPerm());
+        Perms = "unknown";
+        DataStuff.init(this);
+        DataStuff.Delete("Korsina");
     }
-
     public static App getInstance() {
         return instance;
     }
@@ -39,4 +43,13 @@ public class App extends Application {
     public static Integer getFlag(){
         return flag;
     }
+
+    public static void setPerms(String val){
+        Perms = val;
+    }
+
+    public static String getPerms(){
+        return Perms;
+    }
+
 }
